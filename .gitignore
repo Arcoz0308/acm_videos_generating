@@ -1,0 +1,5 @@
+/node_modules
+/resources/in
+/resources/out
+/pnpm-lock.yaml
+/.idea
