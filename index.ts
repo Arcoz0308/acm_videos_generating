@@ -28,10 +28,17 @@ const load = async () => {
             continue;
         }
 
+        let height = sizes.height;
+        let width = sizes.width;
+        if (Math.floor(width/2) !== width/2 || Math.floor(height/2) !== height/2) {
+            height *= 2;
+            width *=2;
+        }
+
         console.log(green(`start generate video for ${cyanBright(file2.split('.')[0])}`))
         await Editly({
-            height: sizes.height*2,
-            width: sizes.width*2,
+            height: height,
+            width: width,
             outPath: `./resources/out/${file2.split('.')[0]}.mp4`,
             clips: [
                 {
